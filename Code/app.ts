@@ -117,6 +117,28 @@ const app: App = {
 };
 
 
+//OBJECT ORIENTED 
+
+//class
+
+class Person {
+  
+   constructor( 
+     public name:string,
+      public age:number,
+     public email:string,
+    ){
+
+    }
+    greet():void{
+      console.log(`Hello my name is${this.name}`);
+    }
+}
+
+let P1 = new Person("Noorian", 23, "noorain@gmail.com");
+P1.greet();
+
+
 
 
 
