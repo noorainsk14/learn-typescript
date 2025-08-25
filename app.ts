@@ -21,3 +21,104 @@ enum StatusCode {
 
 console.log(StatusCode.NOTFOUND);
 
+//Interfaces and type Aliases
+
+// const obj = {
+//   name:"noorain",
+//   email:"noorain@google.com",
+//   password:"abcd"
+// }
+
+interface User{
+  name:string,
+  email:string,
+  password:string,
+  gender?:String
+}
+
+interface Admin extends User {
+  isAdmin:boolean
+}
+
+
+function getUserdata(obj: User){
+  // obj.name="noorain",
+  // obj.email="noorain@google.com",
+  // obj.password="abcd"
+}
+
+function getAdminData(obj: Admin){
+obj.email
+obj.name
+obj.isAdmin
+obj.password
+obj.gender
+}
+
+getAdminData({
+  name:"Husnain",
+  email:"husnain@google.com",
+  password:"1234",
+  gender:"M",
+  isAdmin:true
+})
+
+
+getUserdata({
+  name:"noorain",
+  email:"noorain@google.com",
+  password:"abcd",
+  gender:"M"
+});
+
+
+//Aliases
+
+type value = string | number | null
+
+let something:value;
+
+something="noorain";
+something=1233;
+
+//Intersection types
+
+
+interface HasEmail {
+  email: string;
+}
+
+interface HasUsername {
+  username: string;
+}
+
+type User2 = HasEmail & HasUsername;
+
+const user: User2 = {
+  email: "noorain@example.com",
+  username: "noorain123"
+};
+
+//Example with Object & Function Types
+
+type Logger = {
+  log: (msg: string) => void;
+};
+
+type Service = {
+  run: () => void;
+};
+
+type App = Logger & Service;
+
+const app: App = {
+  log: (msg) => console.log("LOG:", msg),
+  run: () => console.log("Service running...")
+};
+
+
+
+
+
+
+

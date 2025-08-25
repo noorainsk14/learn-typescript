@@ -17,4 +17,40 @@ var StatusCode;
     StatusCode["NOTFOUND"] = "not found status code is 404";
 })(StatusCode || (StatusCode = {}));
 console.log(StatusCode.NOTFOUND);
+function getUserdata(obj) {
+    // obj.name="noorain",
+    // obj.email="noorain@google.com",
+    // obj.password="abcd"
+}
+function getAdminData(obj) {
+    obj.email;
+    obj.name;
+    obj.isAdmin;
+    obj.password;
+    obj.gender;
+}
+getAdminData({
+    name: "Husnain",
+    email: "husnain@google.com",
+    password: "1234",
+    gender: "M",
+    isAdmin: true
+});
+getUserdata({
+    name: "noorain",
+    email: "noorain@google.com",
+    password: "abcd",
+    gender: "M"
+});
+let something;
+something = "noorain";
+something = 1233;
+const user = {
+    email: "noorain@example.com",
+    username: "noorain123"
+};
+const app = {
+    log: (msg) => console.log("LOG:", msg),
+    run: () => console.log("Service running...")
+};
 //# sourceMappingURL=app.js.map
