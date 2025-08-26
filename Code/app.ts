@@ -159,7 +159,7 @@ class BottleMaker {
 
 let value= new BottleMaker("Milton","Metal",230);
 
-console.log(value.getDetails);
+//console.log(value.getDetails);
 
 
 //AccessModifier
@@ -189,15 +189,15 @@ class Persons {
 }
 
 //name is public → can be accessed from outside:
-const p = new Person("Alice", 30, "alice@example.com");
+const p = new Persons("Alice", 30, "alice@example.com");
 console.log(p.name); // OK
 
 //❌ age is private → cannot access from outside:
-console.log(p.age); // ❌ Error: Property 'age' is private
+//console.log(p.age); // ❌ Error: Property 'age' is private
 
 
 //console.log(p.age); // ❌ Error: Property 'age' is private
-p.getAge(); // ❌ Error
+//p.getAge(); // ❌ Error
 
 
 //p.getAge(); // ❌ Error
@@ -209,6 +209,48 @@ class Employee extends Persons {
 
 const e = new Employee("Bob", 25, "bob@example.com");
 console.log(e.getEmployeeEmail()); // OK
+
+
+//Getter and Setter
+
+class CarMaker {
+
+  constructor(
+    public _name:string,
+    public _type:string,
+    public _price:number
+
+  ){}
+
+  get name() {
+      return this._name;
+    }
+
+    // Getter for price
+  get price(): number {
+    return this._price;
+  }
+
+    set price(value:number) {
+       if (value > 0) {
+      this._price = value;
+    } else {
+      throw new Error("Price must be greater than 0");
+    }
+    }
+}
+
+let C1 = new CarMaker("Toyota","Suv",25000);
+
+console.log(C1);
+
+console.log(C1.name);
+
+C1.price=350000;
+console.log(C1.price);
+
+
+
 
 
 
