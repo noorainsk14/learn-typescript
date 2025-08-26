@@ -138,6 +138,31 @@ class Person {
 let P1 = new Person("Noorian", 23, "noorain@gmail.com");
 P1.greet();
 
+//this keyword
+
+class BottleMaker {
+  constructor(
+    public name:string,
+    public material:string,
+    public price:number
+  ){
+    this.name=name;
+    this.material=material;
+    this.price=price;
+  }
+
+  getDetails(){
+    console.log(this.name,this.material,this.price);
+    
+  }
+}
+
+let value= new BottleMaker("Milton","Metal",230);
+
+console.log(value.getDetails);
+
+
+
 
 
 
