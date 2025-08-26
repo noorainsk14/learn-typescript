@@ -226,11 +226,6 @@ class CarMaker {
       return this._name;
     }
 
-    // Getter for price
-  get price(): number {
-    return this._price;
-  }
-
     set price(value:number) {
        if (value > 0) {
       this._price = value;
@@ -249,6 +244,37 @@ console.log(C1.name);
 C1.price=350000;
 console.log(C1.price);
 
+//Static 
+
+class Vehicle {
+
+  static version = 1.0;
+
+  static getModels(){
+    console.log("fortuner");
+    
+  }
+}
+
+console.log(Vehicle.version);
+Vehicle.getModels();
+
+
+//type assertion 
+
+let variable : any = 12;
+
+(variable as string);
+
+
+//types guards
+
+function abcd(args: string | number){
+  
+}
+
+
+abcd(123);
 
 
 
