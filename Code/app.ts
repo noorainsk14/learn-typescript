@@ -162,6 +162,58 @@ let value= new BottleMaker("Milton","Metal",230);
 console.log(value.getDetails);
 
 
+//AccessModifier
+
+class Persons {
+  public name: string;       // can be accessed anywhere
+  private age: number;       // can only be accessed inside this class
+  protected email: string;   // can be accessed in this class and subclasses
+
+  constructor(name: string, age: number, email: string) {
+    this.name = name;
+    this.age = age;
+    this.email = email;
+  }
+
+  public greet() {
+    console.log(`Hi, I'm ${this.name}`);
+  }
+
+  private getAge() {
+    return this.age;
+  }
+
+  protected getEmail() {
+    return this.email;
+  }
+}
+
+//name is public → can be accessed from outside:
+const p = new Person("Alice", 30, "alice@example.com");
+console.log(p.name); // OK
+
+//❌ age is private → cannot access from outside:
+console.log(p.age); // ❌ Error: Property 'age' is private
+
+
+//console.log(p.age); // ❌ Error: Property 'age' is private
+p.getAge(); // ❌ Error
+
+
+//p.getAge(); // ❌ Error
+class Employee extends Persons {
+  getEmployeeEmail() {
+    return this.email; // ✅ OK: protected access
+  }
+}
+
+const e = new Employee("Bob", 25, "bob@example.com");
+console.log(e.getEmployeeEmail()); // OK
+
+
+
+
+
 
 
 
